@@ -1,4 +1,4 @@
-#include "datamodel/ParticleCollection.h"
+#include "datamodel/MCParticleCollection.h"
 #include "datamodel/EventInfoCollection.h"
 #include "datamodel/JetCollection.h"
 #include "datamodel/JetParticleAssociationCollection.h"
@@ -37,7 +37,7 @@ void processEvent(podio::EventStore& store, bool verbose,
   }
 
   // // read particles
-  const fcc::ParticleCollection* ptcs(nullptr);
+  const fcc::MCParticleCollection* ptcs(nullptr);
   bool particles_available = store.get("genParticles",ptcs);
   if (particles_available){
     for(const auto& part : *ptcs) {
